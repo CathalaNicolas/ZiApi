@@ -5,16 +5,19 @@
 
 int main()
 {
-	ZiApi::Handler handler;
+	//Init the Handler and its request / response
+	std::shared_ptr<ZiApi::Handler> handler = std::make_shared<ZiApi::Handler>();
+	handler->setRequest("POST / HTTP/1.1\r\nHOST: localhost:8000\r\n\r\n-1231565325\r\n");
+	handler->setResponse("");
 
-	/*Todo by User*/
-	HelloWorldModule *module = new HelloWorldModule("HelloWorldModule", "Say Hello", "0.1");
-	handler.setRequest("POST / HTTP/1.1\r\nHOST: localhost:8000\r\n\n-1231565325");
-	module->registerEvents(handler);
-	/*------------*/
+	// /!\ Test example the module most be loaded from dll/.so at run-time.
+	//Creation of the example module
+	std::shared_ptr<HelloWorldModule> module = std::make_shared<HelloWorldModule>("HelloWorldModule", "Say Hello", "0.1");
 
-	handler.launchTypeModule(ZiApi::Event::AnchorPoint::REQUEST);
+	//Register the module in the handler list of modules
+	handler->registerModule(module);
 
-	delete module;
+	//Launch all module for the anchorPoint Request
+	handler->launchTypeModule(ZiApi::Event::AnchorPoint::REQUEST);
 	return (0);
 }

@@ -22,9 +22,9 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ZiApi
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.1</span>
    </div>
-   <div id="projectbrief">Une API pour le projet Zia</div>
+   <div id="projectbrief">An api for the Zia project</div>
   </td>
  </tr>
  </tbody>
@@ -74,30 +74,39 @@ $(function() {
 <div class="title">ZiApi::Handler Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="dynheader">
+Inheritance diagram for ZiApi::Handler:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_zi_api_1_1_handler.png" alt=""/>
+ </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a46003ae27776dbf8530f0f1127a85fff"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_zi_api_1_1_handler.html#a46003ae27776dbf8530f0f1127a85fff">Handler</a> ()</td></tr>
 <tr class="memdesc:a46003ae27776dbf8530f0f1127a85fff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur de la classe <a class="el" href="class_zi_api_1_1_handler.html">Handler</a>.  <a href="#a46003ae27776dbf8530f0f1127a85fff">More...</a><br /></td></tr>
 <tr class="separator:a46003ae27776dbf8530f0f1127a85fff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab98c63704c8f8733e193a4da91b28359"><td class="memItemLeft" align="right" valign="top">std::list&lt; <a class="el" href="class_zi_api_1_1_i_module.html">IModule</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_zi_api_1_1_handler.html#ab98c63704c8f8733e193a4da91b28359">getModules</a> () const</td></tr>
-<tr class="memdesc:ab98c63704c8f8733e193a4da91b28359"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter des modules enregistres.  <a href="#ab98c63704c8f8733e193a4da91b28359">More...</a><br /></td></tr>
-<tr class="separator:ab98c63704c8f8733e193a4da91b28359"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad34a3cf604f112213e960be7c5ebd3f9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_zi_api_1_1_http_message.html">HttpMessage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_zi_api_1_1_handler.html#ad34a3cf604f112213e960be7c5ebd3f9">getRequest</a> () const</td></tr>
-<tr class="memdesc:ad34a3cf604f112213e960be7c5ebd3f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter de la requete HTTP.  <a href="#ad34a3cf604f112213e960be7c5ebd3f9">More...</a><br /></td></tr>
-<tr class="separator:ad34a3cf604f112213e960be7c5ebd3f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0fa444902edd312c9cd43e07f6e304df"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_zi_api_1_1_http_message.html">HttpMessage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_zi_api_1_1_handler.html#a0fa444902edd312c9cd43e07f6e304df">getResponse</a> () const</td></tr>
-<tr class="memdesc:a0fa444902edd312c9cd43e07f6e304df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter de la reponse HTTP.  <a href="#a0fa444902edd312c9cd43e07f6e304df">More...</a><br /></td></tr>
-<tr class="separator:a0fa444902edd312c9cd43e07f6e304df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5c4df3889a2ce428a6d2d2c8401d5ed"><td class="memItemLeft" align="right" valign="top">std::list&lt; std::shared_ptr&lt; <a class="el" href="class_zi_api_1_1_i_module.html">IModule</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_zi_api_1_1_handler.html#ab5c4df3889a2ce428a6d2d2c8401d5ed">getModules</a> () const</td></tr>
+<tr class="memdesc:ab5c4df3889a2ce428a6d2d2c8401d5ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter des modules enregistres.  <a href="#ab5c4df3889a2ce428a6d2d2c8401d5ed">More...</a><br /></td></tr>
+<tr class="separator:ab5c4df3889a2ce428a6d2d2c8401d5ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1292ca892dbe6033a48e74f48409b13"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="class_zi_api_1_1_http_message.html">HttpMessage</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_zi_api_1_1_handler.html#af1292ca892dbe6033a48e74f48409b13">getRequest</a> () const</td></tr>
+<tr class="memdesc:af1292ca892dbe6033a48e74f48409b13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter de la requete HTTP.  <a href="#af1292ca892dbe6033a48e74f48409b13">More...</a><br /></td></tr>
+<tr class="separator:af1292ca892dbe6033a48e74f48409b13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01f398673ba779ec34efb2ba7624dcbb"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="class_zi_api_1_1_http_message.html">HttpMessage</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_zi_api_1_1_handler.html#a01f398673ba779ec34efb2ba7624dcbb">getResponse</a> () const</td></tr>
+<tr class="memdesc:a01f398673ba779ec34efb2ba7624dcbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter de la reponse HTTP.  <a href="#a01f398673ba779ec34efb2ba7624dcbb">More...</a><br /></td></tr>
+<tr class="separator:a01f398673ba779ec34efb2ba7624dcbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad075356e26520723311135b2656942b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_zi_api_1_1_handler.html#ad075356e26520723311135b2656942b8">setRequest</a> (const std::string &amp;request)</td></tr>
 <tr class="memdesc:ad075356e26520723311135b2656942b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter de la requete HTTP.  <a href="#ad075356e26520723311135b2656942b8">More...</a><br /></td></tr>
 <tr class="separator:ad075356e26520723311135b2656942b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a495a865342ad1c26fe4effc6b6d5af0e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_zi_api_1_1_handler.html#a495a865342ad1c26fe4effc6b6d5af0e">setResponse</a> (const std::string &amp;response)</td></tr>
 <tr class="memdesc:a495a865342ad1c26fe4effc6b6d5af0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter de la reponse HTTP.  <a href="#a495a865342ad1c26fe4effc6b6d5af0e">More...</a><br /></td></tr>
 <tr class="separator:a495a865342ad1c26fe4effc6b6d5af0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d14041d8ae72555a496f32a7917d2a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_zi_api_1_1_handler.html#a4d14041d8ae72555a496f32a7917d2a1">registerModule</a> (<a class="el" href="class_zi_api_1_1_i_module.html">IModule</a> *module)</td></tr>
-<tr class="memdesc:a4d14041d8ae72555a496f32a7917d2a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enregistre le module.  <a href="#a4d14041d8ae72555a496f32a7917d2a1">More...</a><br /></td></tr>
-<tr class="separator:a4d14041d8ae72555a496f32a7917d2a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c53b4b1b09e7a7d881f3d216293d21b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_zi_api_1_1_handler.html#a1c53b4b1b09e7a7d881f3d216293d21b">registerModule</a> (const std::shared_ptr&lt; <a class="el" href="class_zi_api_1_1_i_module.html">IModule</a> &gt; &amp;module)</td></tr>
+<tr class="memdesc:a1c53b4b1b09e7a7d881f3d216293d21b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enregistre le module.  <a href="#a1c53b4b1b09e7a7d881f3d216293d21b">More...</a><br /></td></tr>
+<tr class="separator:a1c53b4b1b09e7a7d881f3d216293d21b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab98ebe8162f7a80694a6078d37fefecd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_zi_api_1_1_handler.html#ab98ebe8162f7a80694a6078d37fefecd">removeModule</a> (const std::shared_ptr&lt; <a class="el" href="class_zi_api_1_1_i_module.html">IModule</a> &gt; &amp;module)</td></tr>
+<tr class="memdesc:ab98ebe8162f7a80694a6078d37fefecd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enlève le module du registre.  <a href="#ab98ebe8162f7a80694a6078d37fefecd">More...</a><br /></td></tr>
+<tr class="separator:ab98ebe8162f7a80694a6078d37fefecd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a199602cd50478b8fc95b349dc18d10b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_zi_api_1_1_handler.html#a199602cd50478b8fc95b349dc18d10b9">launchTypeModule</a> (const <a class="el" href="class_zi_api_1_1_event.html#a3081c690738d6de1b2118c45be06e23c">Event::AnchorPoint</a> &amp;anchorPoint)</td></tr>
 <tr class="memdesc:a199602cd50478b8fc95b349dc18d10b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lance les modules en fonction de leur <em>AnchorPoint</em>.  <a href="#a199602cd50478b8fc95b349dc18d10b9">More...</a><br /></td></tr>
 <tr class="separator:a199602cd50478b8fc95b349dc18d10b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -125,14 +134,14 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ab98c63704c8f8733e193a4da91b28359"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab98c63704c8f8733e193a4da91b28359">&#9670;&nbsp;</a></span>getModules()</h2>
+<a id="ab5c4df3889a2ce428a6d2d2c8401d5ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5c4df3889a2ce428a6d2d2c8401d5ed">&#9670;&nbsp;</a></span>getModules()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::list&lt; <a class="el" href="class_zi_api_1_1_i_module.html">ZiApi::IModule</a> * &gt; ZiApi::Handler::getModules </td>
+          <td class="memname">std::list&lt; std::shared_ptr&lt; <a class="el" href="class_zi_api_1_1_i_module.html">ZiApi::IModule</a> &gt; &gt; ZiApi::Handler::getModules </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -146,14 +155,14 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ad34a3cf604f112213e960be7c5ebd3f9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad34a3cf604f112213e960be7c5ebd3f9">&#9670;&nbsp;</a></span>getRequest()</h2>
+<a id="af1292ca892dbe6033a48e74f48409b13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1292ca892dbe6033a48e74f48409b13">&#9670;&nbsp;</a></span>getRequest()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_zi_api_1_1_http_message.html">ZiApi::HttpMessage</a> ZiApi::Handler::getRequest </td>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="class_zi_api_1_1_http_message.html">ZiApi::HttpMessage</a> &gt; ZiApi::Handler::getRequest </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -167,14 +176,14 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a0fa444902edd312c9cd43e07f6e304df"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0fa444902edd312c9cd43e07f6e304df">&#9670;&nbsp;</a></span>getResponse()</h2>
+<a id="a01f398673ba779ec34efb2ba7624dcbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01f398673ba779ec34efb2ba7624dcbb">&#9670;&nbsp;</a></span>getResponse()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_zi_api_1_1_http_message.html">ZiApi::HttpMessage</a> ZiApi::Handler::getResponse </td>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="class_zi_api_1_1_http_message.html">ZiApi::HttpMessage</a> &gt; ZiApi::Handler::getResponse </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -215,8 +224,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a4d14041d8ae72555a496f32a7917d2a1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4d14041d8ae72555a496f32a7917d2a1">&#9670;&nbsp;</a></span>registerModule()</h2>
+<a id="a1c53b4b1b09e7a7d881f3d216293d21b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c53b4b1b09e7a7d881f3d216293d21b">&#9670;&nbsp;</a></span>registerModule()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -224,7 +233,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void ZiApi::Handler::registerModule </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_zi_api_1_1_i_module.html">IModule</a> *&#160;</td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="class_zi_api_1_1_i_module.html">IModule</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>module</em></td><td>)</td>
           <td></td>
         </tr>
@@ -233,6 +242,33 @@ Public Member Functions</h2></td></tr>
 
 <p>Enregistre le module. </p>
 <p>Fonction permettant d'enregistrer le module dans la liste des modules du <em><a class="el" href="class_zi_api_1_1_handler.html">Handler</a></em> </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Module</td><td>Un pointeur sur le module a ajouter a la liste. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab98ebe8162f7a80694a6078d37fefecd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab98ebe8162f7a80694a6078d37fefecd">&#9670;&nbsp;</a></span>removeModule()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ZiApi::Handler::removeModule </td>
+          <td>(</td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="class_zi_api_1_1_i_module.html">IModule</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>module</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enlève le module du registre. </p>
+<p>Fonction permettant de retirer le module de la liste des modules du <em><a class="el" href="class_zi_api_1_1_handler.html">Handler</a></em> </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">Module</td><td>Un pointeur sur le module a ajouter a la liste. </td></tr>
@@ -297,8 +333,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_handler_8h_source.html">Handler.h</a></li>
-<li>Handler.cpp</li>
+<li>include/<a class="el" href="_handler_8h_source.html">Handler.h</a></li>
+<li>src/Handler.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

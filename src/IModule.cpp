@@ -3,12 +3,6 @@
 ZiApi::IModule::IModule(const std::string &name, const std::string &description, const std::string &version)
 	: name(name), description(description), version(version)
 {
-	std::cout << "Created Module: " << name << " description: " << description << " version: " << version << std::endl;
-}
-
-ZiApi::IModule::~IModule()
-{
-	std::cout << "Destroying Module: " << name << " description: " << description << " version: " << version << std::endl;
 }
 
 std::string ZiApi::IModule::getName() const

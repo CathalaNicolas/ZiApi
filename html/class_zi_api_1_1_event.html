@@ -22,9 +22,9 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ZiApi
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.1</span>
    </div>
-   <div id="projectbrief">Une API pour le projet Zia</div>
+   <div id="projectbrief">An api for the Zia project</div>
   </td>
  </tr>
  </tbody>
@@ -90,32 +90,28 @@ Public Types</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:a3081c690738d6de1b2118c45be06e23c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Les differents point d'ancrage.  <a href="class_zi_api_1_1_event.html#a3081c690738d6de1b2118c45be06e23c">More...</a><br /></td></tr>
 <tr class="separator:a3081c690738d6de1b2118c45be06e23c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab33d0b5aab5f4efd98fd4b783ddd2c9f"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_zi_api_1_1_event.html#ab33d0b5aab5f4efd98fd4b783ddd2c9f">EventPriority</a> { <br />
-&#160;&#160;<a class="el" href="class_zi_api_1_1_event.html#ab33d0b5aab5f4efd98fd4b783ddd2c9fa9ff43366f8183c5d81c7dbedfe10f83b">LAST</a> = 0, 
-<a class="el" href="class_zi_api_1_1_event.html#ab33d0b5aab5f4efd98fd4b783ddd2c9faf04dd573c9f118c3ef898545de99f8b6">LOW</a> = 1, 
-<a class="el" href="class_zi_api_1_1_event.html#ab33d0b5aab5f4efd98fd4b783ddd2c9fa6c61605be07434544533a6446197bc20">MID</a> = 2, 
-<a class="el" href="class_zi_api_1_1_event.html#ab33d0b5aab5f4efd98fd4b783ddd2c9fa3dd10a0fd5c1d38df449fb9fa72a4331">HIGH</a> = 3, 
-<br />
-&#160;&#160;<a class="el" href="class_zi_api_1_1_event.html#ab33d0b5aab5f4efd98fd4b783ddd2c9fa9bf25c6d64d0cba1720c6d439135e1ca">FIRST</a> = 4
-<br />
+<tr class="memitem:ab33d0b5aab5f4efd98fd4b783ddd2c9f"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_zi_api_1_1_event.html#ab33d0b5aab5f4efd98fd4b783ddd2c9f">EventPriority</a> { <a class="el" href="class_zi_api_1_1_event.html#ab33d0b5aab5f4efd98fd4b783ddd2c9fa9bf25c6d64d0cba1720c6d439135e1ca">FIRST</a>, 
+<a class="el" href="class_zi_api_1_1_event.html#ab33d0b5aab5f4efd98fd4b783ddd2c9fa3dd10a0fd5c1d38df449fb9fa72a4331">HIGH</a>, 
+<a class="el" href="class_zi_api_1_1_event.html#ab33d0b5aab5f4efd98fd4b783ddd2c9fa6c61605be07434544533a6446197bc20">MID</a>, 
+<a class="el" href="class_zi_api_1_1_event.html#ab33d0b5aab5f4efd98fd4b783ddd2c9faf04dd573c9f118c3ef898545de99f8b6">LOW</a>
  }</td></tr>
 <tr class="memdesc:ab33d0b5aab5f4efd98fd4b783ddd2c9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Les differentes priorite d'un evenement.  <a href="class_zi_api_1_1_event.html#ab33d0b5aab5f4efd98fd4b783ddd2c9f">More...</a><br /></td></tr>
 <tr class="separator:ab33d0b5aab5f4efd98fd4b783ddd2c9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a722432a2fca74a2d27009b9bb2a4d9bc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_zi_api_1_1_event.html#a722432a2fca74a2d27009b9bb2a4d9bc">Event</a> (const std::string &amp;name, const std::function&lt; void(<a class="el" href="class_zi_api_1_1_http_message.html">HttpMessage</a> &amp;, <a class="el" href="class_zi_api_1_1_http_message.html">HttpMessage</a> &amp;)&gt; &amp;function, const <a class="el" href="class_zi_api_1_1_event.html#ab33d0b5aab5f4efd98fd4b783ddd2c9f">EventPriority</a> &amp;priority, const <a class="el" href="class_zi_api_1_1_event.html#a3081c690738d6de1b2118c45be06e23c">AnchorPoint</a> &amp;anchorPoint)</td></tr>
-<tr class="memdesc:a722432a2fca74a2d27009b9bb2a4d9bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur de la classe <a class="el" href="class_zi_api_1_1_event.html">Event</a>.  <a href="#a722432a2fca74a2d27009b9bb2a4d9bc">More...</a><br /></td></tr>
-<tr class="separator:a722432a2fca74a2d27009b9bb2a4d9bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39762a5d47067ac586260739658356af"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_zi_api_1_1_event.html#a39762a5d47067ac586260739658356af">Event</a> (const std::string &amp;name, const EventFunction &amp;function, const <a class="el" href="class_zi_api_1_1_event.html#ab33d0b5aab5f4efd98fd4b783ddd2c9f">EventPriority</a> &amp;priority, const <a class="el" href="class_zi_api_1_1_event.html#a3081c690738d6de1b2118c45be06e23c">AnchorPoint</a> &amp;anchorPoint)</td></tr>
+<tr class="memdesc:a39762a5d47067ac586260739658356af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur de la classe <a class="el" href="class_zi_api_1_1_event.html">Event</a>.  <a href="#a39762a5d47067ac586260739658356af">More...</a><br /></td></tr>
+<tr class="separator:a39762a5d47067ac586260739658356af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7e310e0c775e95269ed4dc7a34274a4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_zi_api_1_1_event.html#ab33d0b5aab5f4efd98fd4b783ddd2c9f">EventPriority</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_zi_api_1_1_event.html#af7e310e0c775e95269ed4dc7a34274a4">getPriority</a> () const</td></tr>
 <tr class="memdesc:af7e310e0c775e95269ed4dc7a34274a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter de la proriete de l'evenement.  <a href="#af7e310e0c775e95269ed4dc7a34274a4">More...</a><br /></td></tr>
 <tr class="separator:af7e310e0c775e95269ed4dc7a34274a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6889a0cf167dd153d4c5ffb417ad96d4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_zi_api_1_1_event.html#a3081c690738d6de1b2118c45be06e23c">AnchorPoint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_zi_api_1_1_event.html#a6889a0cf167dd153d4c5ffb417ad96d4">getAnchorPoint</a> () const</td></tr>
 <tr class="memdesc:a6889a0cf167dd153d4c5ffb417ad96d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter du point d'ancrage de l'evenement.  <a href="#a6889a0cf167dd153d4c5ffb417ad96d4">More...</a><br /></td></tr>
 <tr class="separator:a6889a0cf167dd153d4c5ffb417ad96d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b8e0f06955cf1537d03a9a434712d59"><td class="memItemLeft" align="right" valign="top">std::function&lt; void(<a class="el" href="class_zi_api_1_1_http_message.html">HttpMessage</a> &amp;, <a class="el" href="class_zi_api_1_1_http_message.html">HttpMessage</a> &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_zi_api_1_1_event.html#a8b8e0f06955cf1537d03a9a434712d59">getFunction</a> () const</td></tr>
-<tr class="memdesc:a8b8e0f06955cf1537d03a9a434712d59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter de la fonction liee a l'evenement.  <a href="#a8b8e0f06955cf1537d03a9a434712d59">More...</a><br /></td></tr>
-<tr class="separator:a8b8e0f06955cf1537d03a9a434712d59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c2bbb0fd12dc165825fcf9d3c0841e0"><td class="memItemLeft" align="right" valign="top">EventFunction&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_zi_api_1_1_event.html#a7c2bbb0fd12dc165825fcf9d3c0841e0">getFunction</a> () const</td></tr>
+<tr class="memdesc:a7c2bbb0fd12dc165825fcf9d3c0841e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter de la fonction liee a l'evenement.  <a href="#a7c2bbb0fd12dc165825fcf9d3c0841e0">More...</a><br /></td></tr>
+<tr class="separator:a7c2bbb0fd12dc165825fcf9d3c0841e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a3081c690738d6de1b2118c45be06e23c"></a>
@@ -162,25 +158,23 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Les differentes priorite d'un evenement. </p>
-<p>La priorite d'un evenement determine ca place dans l'ordre d'appel des evenements. </p>
+<p>La priorite d'un evenement determine sa place dans l'ordre d'appel des evenements. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ab33d0b5aab5f4efd98fd4b783ddd2c9fa9ff43366f8183c5d81c7dbedfe10f83b"></a>LAST&#160;</td><td class="fielddoc"><p>Defini l'evenement comme l'un des derniers a appeler </p>
-</td></tr>
-<tr><td class="fieldname"><a id="ab33d0b5aab5f4efd98fd4b783ddd2c9faf04dd573c9f118c3ef898545de99f8b6"></a>LOW&#160;</td><td class="fielddoc"><p>Defini l'evenement avec une priorite basse </p>
-</td></tr>
-<tr><td class="fieldname"><a id="ab33d0b5aab5f4efd98fd4b783ddd2c9fa6c61605be07434544533a6446197bc20"></a>MID&#160;</td><td class="fielddoc"><p>Defini l'evenement avec une priorite normale </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ab33d0b5aab5f4efd98fd4b783ddd2c9fa9bf25c6d64d0cba1720c6d439135e1ca"></a>FIRST&#160;</td><td class="fielddoc"><p>Defini l'evenement comme l'un des premiers a appeler </p>
 </td></tr>
 <tr><td class="fieldname"><a id="ab33d0b5aab5f4efd98fd4b783ddd2c9fa3dd10a0fd5c1d38df449fb9fa72a4331"></a>HIGH&#160;</td><td class="fielddoc"><p>Defini l'evenement avec une priorite grande </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ab33d0b5aab5f4efd98fd4b783ddd2c9fa9bf25c6d64d0cba1720c6d439135e1ca"></a>FIRST&#160;</td><td class="fielddoc"><p>Defini l'evenement comme l'un des premiers a appeler </p>
+<tr><td class="fieldname"><a id="ab33d0b5aab5f4efd98fd4b783ddd2c9fa6c61605be07434544533a6446197bc20"></a>MID&#160;</td><td class="fielddoc"><p>Defini l'evenement avec une priorite normale </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ab33d0b5aab5f4efd98fd4b783ddd2c9faf04dd573c9f118c3ef898545de99f8b6"></a>LOW&#160;</td><td class="fielddoc"><p>Defini l'evenement avec une priorite basse </p>
 </td></tr>
 </table>
 
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a722432a2fca74a2d27009b9bb2a4d9bc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a722432a2fca74a2d27009b9bb2a4d9bc">&#9670;&nbsp;</a></span>Event()</h2>
+<a id="a39762a5d47067ac586260739658356af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39762a5d47067ac586260739658356af">&#9670;&nbsp;</a></span>Event()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -194,7 +188,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::function&lt; void(<a class="el" href="class_zi_api_1_1_http_message.html">HttpMessage</a> &amp;, <a class="el" href="class_zi_api_1_1_http_message.html">HttpMessage</a> &amp;)&gt; &amp;&#160;</td>
+          <td class="paramtype">const EventFunction &amp;&#160;</td>
           <td class="paramname"><em>function</em>, </td>
         </tr>
         <tr>
@@ -254,14 +248,14 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a8b8e0f06955cf1537d03a9a434712d59"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8b8e0f06955cf1537d03a9a434712d59">&#9670;&nbsp;</a></span>getFunction()</h2>
+<a id="a7c2bbb0fd12dc165825fcf9d3c0841e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c2bbb0fd12dc165825fcf9d3c0841e0">&#9670;&nbsp;</a></span>getFunction()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::function&lt; void(<a class="el" href="class_zi_api_1_1_http_message.html">ZiApi::HttpMessage</a> &amp;, <a class="el" href="class_zi_api_1_1_http_message.html">ZiApi::HttpMessage</a> &amp;)&gt; ZiApi::Event::getFunction </td>
+          <td class="memname">ZiApi::EventFunction ZiApi::Event::getFunction </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -297,8 +291,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_event_8h_source.html">Event.h</a></li>
-<li>Event.cpp</li>
+<li>include/<a class="el" href="_event_8h_source.html">Event.h</a></li>
+<li>src/Event.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

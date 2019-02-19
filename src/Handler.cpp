@@ -1,6 +1,7 @@
 #include "Handler.h"
 
 ZiApi::Handler::Handler()
+	: request(std::make_shared<HttpMessage>("", "")), response(std::make_shared<HttpMessage>("", ""))
 {
 }
 
@@ -10,39 +11,40 @@ ZiApi::Handler::~Handler()
 
 void							ZiApi::Handler::setRequest(const std::string &request)
 {
-	HttpMessage _request(request);
-
-	this->request = _request;
+	this->request->setMessage(request);
 }
 
 void							ZiApi::Handler::setResponse(const std::string &response)
 {
-	HttpMessage _response(response);
-
-	this->response = _response;
+	this->response->setMessage(response);
 }
 
-ZiApi::HttpMessage				ZiApi::Handler::getRequest() const
+std::shared_ptr<ZiApi::HttpMessage>				ZiApi::Handler::getRequest() const
 {
 	return (request);
 }
 
-ZiApi::HttpMessage				ZiApi::Handler::getResponse() const
+std::shared_ptr<ZiApi::HttpMessage>				ZiApi::Handler::getResponse() const
 {
 	return (response);
 }
 
-std::list<ZiApi::IModule*>		ZiApi::Handler::getModules() const
+std::list<std::shared_ptr<ZiApi::IModule>>		ZiApi::Handler::getModules() const
 {
 	return (listModule);
 }
 
-void					ZiApi::Handler::registerModule(IModule *module)
+void					ZiApi::Handler::registerModule(const std::shared_ptr<IModule> &module)
 {
 	listModule.push_back(module);
 }
 
-std::list<ZiApi::Event>		ZiApi::Handler::getAllModuleEvent(const std::list<IModule*> listModule, const ZiApi::Event::AnchorPoint &anchorPoint)
+void					ZiApi::Handler::removeModule(const std::shared_ptr<IModule> &module)
+{
+	listModule.remove(module);
+}
+
+std::list<ZiApi::Event>		ZiApi::Handler::getAllModuleEvent(const std::list<std::shared_ptr<IModule>> &listModule, const ZiApi::Event::AnchorPoint &anchorPoint)
 {
 	std::list<ZiApi::Event> allModuleEvent;
 
@@ -58,10 +60,10 @@ std::list<ZiApi::Event>		ZiApi::Handler::getAllModuleEvent(const std::list<IModu
 	return (allModuleEvent);
 }
 
-std::list<std::function<void(ZiApi::HttpMessage&, ZiApi::HttpMessage&)>>		ZiApi::Handler::getListFunction(const std::list<IModule*> listModule, const ZiApi::Event::AnchorPoint &anchorPoint)
+std::list<ZiApi::EventFunction>		ZiApi::Handler::getListFunction(const std::list<std::shared_ptr<IModule>> &listModule, const ZiApi::Event::AnchorPoint &anchorPoint)
 {
 	std::list<ZiApi::Event> allModuleEvent = getAllModuleEvent(listModule, anchorPoint);
-	std::list<std::function<void(ZiApi::HttpMessage&, ZiApi::HttpMessage&)>>  allModuleFunction;
+	std::list<ZiApi::EventFunction>  allModuleFunction;
 
 	for (auto &&it = allModuleEvent.begin(); it != allModuleEvent.end(); it++)
 	{
@@ -72,7 +74,7 @@ std::list<std::function<void(ZiApi::HttpMessage&, ZiApi::HttpMessage&)>>		ZiApi:
 
 void					ZiApi::Handler::launchTypeModule(const Event::AnchorPoint &anchorPoint)
 {
-	std::list<std::function<void(ZiApi::HttpMessage&, ZiApi::HttpMessage&)>> allModuleFunction = getListFunction(listModule, anchorPoint);
+	std::list<ZiApi::EventFunction> allModuleFunction = getListFunction(listModule, anchorPoint);
 
 	for (auto &&it = allModuleFunction.begin(); it != allModuleFunction.end(); it++)
 	{

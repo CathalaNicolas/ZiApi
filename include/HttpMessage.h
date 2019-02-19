@@ -14,7 +14,7 @@
 
 namespace ZiApi 
 {
-	class HttpMessage
+	class HttpMessage : public std::enable_shared_from_this<HttpMessage>
 	{
 	public:
 		/**
@@ -42,17 +42,8 @@ namespace ZiApi
 		* \param    body		Un HttpField correspondant au body
 		* \return    Un \e HttpMessage
 		 */
-		HttpMessage(const HttpField &header, const HttpField &body);
+		HttpMessage(const std::shared_ptr<HttpField> &header, const std::shared_ptr<HttpField> &body);
 
-		/**
-		* \brief      Constructeur de la classe HttpMessage
-		* \details    Constructeur qui parse une requete/reponse pour
-		*			  recuperer son header, son body et recuperer leurs
-		*			  champs et leurs valeurs associees.
-		*
-		* \return    Un \e HttpField.
-		 */
-		HttpMessage(const std::string &message);
 		~HttpMessage();
 
 		/**
@@ -62,7 +53,7 @@ namespace ZiApi
 		*
 		* \return    Un \e HttpField correspondant au header.
 		 */
-		HttpField	getHeader()const;
+		std::shared_ptr<HttpField>	getHeader()const;
 		/**
 		* \brief      Getter du body
 		* \details    Fonction donnant acces a l'objet HttpField contenant
@@ -70,14 +61,23 @@ namespace ZiApi
 		*
 		* \return    Un \e HttpField correspondant au body.
 		 */
-		HttpField	getBody()const;
+		std::shared_ptr<HttpField>	getBody()const;
+
+		/**
+		* \brief      Setter du Message
+		* \details    Fonction initialisant le header ainsi que
+		*			  le body du HttpMessage
+		*\param message	Une string representant le message a parser
+		 */
+		void						setMessage(const std::string &message);
 
 	private:
-		HttpField	header;
-		HttpField	body;
+		std::shared_ptr<HttpField>	header;
+		std::shared_ptr<HttpField>	body;
 
-		void		setHeader(const std::string &header);
-		void		setBody(const std::string &body);
+
+		void						setHeader(const std::string &header);
+		void						setBody(const std::string &body);
 	};
 
 }

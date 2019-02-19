@@ -13,6 +13,7 @@
 #include <boost/algorithm/string.hpp>
 #include <map>
 #include <vector>
+#include <iostream>
 
 namespace ZiApi
 {
@@ -68,8 +69,8 @@ namespace ZiApi
 		*/
 		std::string							getStringField()const { return field; }
 	private:
-		std::string field;
-		std::map<std::string, std::string> mapField;
+		std::string							field;
+		std::map<std::string, std::string>	mapField;
 
 
 		void							mapStringField(const std::string &field);
