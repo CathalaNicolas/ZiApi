@@ -16,7 +16,7 @@ namespace ZiApi
 {
 	class IModule;
 
-	class Handler
+	class Handler : public std::enable_shared_from_this<Handler>
 	{
 	public:
 		/**
@@ -36,7 +36,7 @@ namespace ZiApi
 		*
 		* \return    Une \e list de module
 		 */
-		std::list<IModule*>	getModules()const;
+		std::list<std::shared_ptr<IModule>>		getModules()const;
 		/**
 		* \brief      Getter de la requete HTTP.
 		* \details    Fonction permettant d'acceder a la requete HTTP.
@@ -44,7 +44,7 @@ namespace ZiApi
 		*
 		* \return    Une \e HttpMessage contenant la requete HTTP.
 		 */
-		HttpMessage			getRequest()const;
+		std::shared_ptr<HttpMessage>			getRequest()const;
 		/**
 		* \brief      Getter de la reponse HTTP.
 		* \details    Fonction permettant d'acceder a la reponse HTTP.
@@ -52,21 +52,21 @@ namespace ZiApi
 		*
 		* \return    Une \e HttpMessage contenant la reponse HTTP.
 		 */
-		HttpMessage			getResponse()const;
+		std::shared_ptr<HttpMessage>			getResponse()const;
 		/**
 		* \brief      Setter de la requete HTTP.
 		* \details    Fonction permettant de modifier la requete HTTP.
 		*
 		* \param request	Une string correspondant a la requete HTTP.
 		 */
-		void				setRequest(const std::string &request);
+		void									setRequest(const std::string &request);
 		/**
 		* \brief      Setter de la reponse HTTP.
 		* \details    Fonction permettant de modifier la reponse HTTP.
 		*
 		* \param request	Une string correspondant a la reponse HTTP.
 		 */
-		void				setResponse(const std::string &response);
+		void									setResponse(const std::string &response);
 		
 		/**
 		* \brief      Enregistre le module.
@@ -75,7 +75,15 @@ namespace ZiApi
 		*
 		* \param Module	Un pointeur sur le module a ajouter a la liste.
 		 */
-		void				registerModule(IModule *module);
+		void									registerModule(const std::shared_ptr<IModule> &module);
+		/**
+		* \brief      Enlève le module du registre.
+		* \details	  Fonction permettant de retirer le module
+		*			  de la liste des modules du \e Handler
+		*
+		* \param Module	Un pointeur sur le module a ajouter a la liste.
+		 */
+		void									removeModule(const std::shared_ptr<IModule> &module);
 		/**
 		* \brief      Lance les modules en fonction de leur \e AnchorPoint
 		* \details    Fonction permettant de lancer la chaîne de module
@@ -83,13 +91,14 @@ namespace ZiApi
 		*
 		* \param AnchorPoint	Un point d'ancrage.
 		 */
-		void				launchTypeModule(const Event::AnchorPoint &anchorPoint);
+		void									launchTypeModule(const Event::AnchorPoint &anchorPoint);
 
 	private:
-		std::list<IModule*> listModule;
-		HttpMessage			request;
-		HttpMessage			response;
-		std::list<std::function<void(HttpMessage&, HttpMessage&)>>	getListFunction(const std::list<IModule*> listModule, const Event::AnchorPoint &anchorPoint);
-		std::list<Event>											getAllModuleEvent(const std::list<IModule*> listModule, const Event::AnchorPoint &anchorPoint);
+		std::list<std::shared_ptr<IModule>>			listModule;
+		std::shared_ptr<HttpMessage>				request;
+		std::shared_ptr<HttpMessage>				response;
+
+		std::list<EventFunction>					getListFunction(const std::list<std::shared_ptr<IModule>> &listModule, const Event::AnchorPoint &anchorPoint);
+		std::list<Event>							getAllModuleEvent(const std::list<std::shared_ptr<IModule>> &listModule, const Event::AnchorPoint &anchorPoint);
 	};
 }

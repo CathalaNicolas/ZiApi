@@ -1,4 +1,15 @@
 #include "HttpField.h"
+#include <iostream>
+
+ZiApi::HttpField::HttpField(const std::string &field)
+	: field(field)
+{
+	mapStringField(field);
+}
+
+ZiApi::HttpField::~HttpField()
+{
+}
 
 void									ZiApi::HttpField::mapStringField(const std::string &field)
 {
@@ -19,8 +30,7 @@ void									ZiApi::HttpField::mapStringField(const std::string &field)
 		{
 			if (it == keyAndValue.begin())
 				key = (*it);
-			else
-				value += (*it);
+			value += (*it);
 			mapField.insert(std::pair<std::string, std::string>(key, value));
 		}
 	}
@@ -35,18 +45,9 @@ std::string								ZiApi::HttpField::getValueFromMapField(const std::string &key
 {
 	return (mapField.at(key));
 }
+
 void								ZiApi::HttpField::setField(const std::string &field)
 {
-	this->field = field;
+	this->field = std::string(field);
 	mapStringField(this->field);
-}
-
-ZiApi::HttpField::HttpField(const std::string &field)
-	: field(field)
-{
-	mapStringField(field);
-}
-
-ZiApi::HttpField::~HttpField()
-{
 }

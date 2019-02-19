@@ -20,7 +20,7 @@ namespace ZiApi
 	class Event;
 	class Handler;
 
-	class IModule
+	class IModule : public std::enable_shared_from_this<IModule>
 	{
 	public:
 		/**
@@ -32,7 +32,6 @@ namespace ZiApi
 		* \return    Un \e IModule.
 		*/
 		IModule(const std::string &name, const std::string &description, const std::string &version);
-		virtual ~IModule();
 		
 		/**
 		* \brief      Getter du nom du module
@@ -69,20 +68,12 @@ namespace ZiApi
 		* \return    Une \e liste d'evenement.
 		 */
 		std::list<Event>	createListForAnchorPoint(const Event::AnchorPoint &anchorPoint)const;
-		/**
-		* \brief      Fonction d'enregistrement du module
-		* \details    Fonction devant etre implementer par le module heritant de IModule
-		*			  elle permet d'ajouter le module a la liste de modules du Handler
-		*
-		* \param	Handler	le Handler.
-		*/
-		virtual void		registerEvents(Handler &handler) = 0;
 
 	private:
-		std::string name;
-		std::string description;
-		std::string version;
-		std::list<Event> listEvent;
+		std::string			name;
+		std::string			description;
+		std::string			version;
+		std::list<Event>	listEvent;
 	};
 
 }

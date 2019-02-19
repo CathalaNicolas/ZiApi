@@ -22,9 +22,9 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ZiApi
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.1</span>
    </div>
-   <div id="projectbrief">Une API pour le projet Zia</div>
+   <div id="projectbrief">An api for the Zia project</div>
   </td>
  </tr>
  </tbody>
@@ -71,7 +71,7 @@ $(function() {
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="class_zi_api_1_1_i_module-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">ZiApi::IModule Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+<div class="title">ZiApi::IModule Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="dynheader">
@@ -80,7 +80,7 @@ Inheritance diagram for ZiApi::IModule:</div>
  <div class="center">
   <img src="class_zi_api_1_1_i_module.png" usemap="#ZiApi::IModule_map" alt=""/>
   <map id="ZiApi::IModule_map" name="ZiApi::IModule_map">
-<area href="class_hello_world_module.html" alt="HelloWorldModule" shape="rect" coords="0,56,116,80"/>
+<area href="class_hello_world_module.html" alt="HelloWorldModule" shape="rect" coords="0,112,245,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -104,9 +104,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0edc905ff2d4fe1d49550c47c539da60"><td class="memItemLeft" align="right" valign="top">std::list&lt; <a class="el" href="class_zi_api_1_1_event.html">Event</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_zi_api_1_1_i_module.html#a0edc905ff2d4fe1d49550c47c539da60">createListForAnchorPoint</a> (const <a class="el" href="class_zi_api_1_1_event.html#a3081c690738d6de1b2118c45be06e23c">Event::AnchorPoint</a> &amp;anchorPoint) const</td></tr>
 <tr class="memdesc:a0edc905ff2d4fe1d49550c47c539da60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creer une liste des evenements du module.  <a href="#a0edc905ff2d4fe1d49550c47c539da60">More...</a><br /></td></tr>
 <tr class="separator:a0edc905ff2d4fe1d49550c47c539da60"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb8a93ea7aad66aaea0a8bde62029aa3"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_zi_api_1_1_i_module.html#adb8a93ea7aad66aaea0a8bde62029aa3">registerEvents</a> (<a class="el" href="class_zi_api_1_1_handler.html">Handler</a> &amp;handler)=0</td></tr>
-<tr class="memdesc:adb8a93ea7aad66aaea0a8bde62029aa3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction d'enregistrement du module.  <a href="#adb8a93ea7aad66aaea0a8bde62029aa3">More...</a><br /></td></tr>
-<tr class="separator:adb8a93ea7aad66aaea0a8bde62029aa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="afd95aecfc767e42f28661b91648d1925"></a>
@@ -271,46 +268,9 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="adb8a93ea7aad66aaea0a8bde62029aa3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adb8a93ea7aad66aaea0a8bde62029aa3">&#9670;&nbsp;</a></span>registerEvents()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void ZiApi::IModule::registerEvents </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_zi_api_1_1_handler.html">Handler</a> &amp;&#160;</td>
-          <td class="paramname"><em>handler</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Fonction d'enregistrement du module. </p>
-<p>Fonction devant etre implementer par le module heritant de <a class="el" href="class_zi_api_1_1_i_module.html">IModule</a> elle permet d'ajouter le module a la liste de modules du <a class="el" href="class_zi_api_1_1_handler.html">Handler</a></p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname"><a class="el" href="class_zi_api_1_1_handler.html">Handler</a></td><td>le <a class="el" href="class_zi_api_1_1_handler.html">Handler</a>. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Implemented in <a class="el" href="class_hello_world_module.html#a8fd294685dbf8fbadac227c275a5ab5f">HelloWorldModule</a>.</p>
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_i_module_8h_source.html">IModule.h</a></li>
-<li>IModule.cpp</li>
+<li>include/<a class="el" href="_i_module_8h_source.html">IModule.h</a></li>
+<li>src/IModule.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

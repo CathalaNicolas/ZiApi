@@ -18,6 +18,7 @@
 namespace ZiApi {
 
 	class Handler;
+	typedef std::function<void(std::shared_ptr<HttpMessage>&, std::shared_ptr<HttpMessage>&)> EventFunction;
 
 	class Event
 	{
@@ -38,15 +39,15 @@ namespace ZiApi {
 
 		/**
 		* \brief     Les differentes priorite d'un evenement.
-		* \details   La priorite d'un evenement determine ca place dans l'ordre d'appel des evenements.
+		* \details   La priorite d'un evenement determine sa place dans l'ordre d'appel des evenements.
 		*/
 		enum EventPriority
 		{
-			LAST = 0, /*!< Defini l'evenement comme l'un des derniers a appeler*/
-			LOW = 1, /*!< Defini l'evenement avec une priorite basse*/
-			MID = 2, /*!< Defini l'evenement avec une priorite normale*/
-			HIGH = 3, /*!< Defini l'evenement avec une priorite grande*/
-			FIRST = 4 /*!< Defini l'evenement comme l'un des premiers a appeler*/
+
+			FIRST, /*!< Defini l'evenement comme l'un des premiers a appeler*/
+			HIGH, /*!< Defini l'evenement avec une priorite grande*/
+			MID, /*!< Defini l'evenement avec une priorite normale*/
+			LOW, /*!< Defini l'evenement avec une priorite basse*/
 		};
 
 		/**
@@ -60,7 +61,7 @@ namespace ZiApi {
 		* \param	anchorPoint	 Point d'ancrage de la fonction voir enum \e AnchorPoint.
 		* \return    Un \e Event representant l'Event creer.
 		 */
-		Event(const std::string &name, const std::function<void(HttpMessage&, HttpMessage&)> &function, const EventPriority &priority, const AnchorPoint &anchorPoint);
+		Event(const std::string &name, const EventFunction &function, const EventPriority &priority, const AnchorPoint &anchorPoint);
 		~Event();
 
 		/**
@@ -85,13 +86,13 @@ namespace ZiApi {
 		*
 		* \return	Un \e std::function<void(HttpMessage&, HttpMessage&)>
 		*/
-		std::function<void(HttpMessage&, HttpMessage&)>	getFunction()const;
+		EventFunction	getFunction()const;
 		
 	private:
-		const std::string								name;
-		EventPriority									priority;
-		AnchorPoint										anchorPoint;
-		std::function<void(HttpMessage&, HttpMessage&)>	function;
+		const std::string	name;
+		EventFunction		function;
+		EventPriority		priority;
+		AnchorPoint			anchorPoint;
 	};
 
 	/**
