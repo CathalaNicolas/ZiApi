@@ -1,6 +1,7 @@
+#include "stdafx.h"
 #include "HelloWorldModule.h"
 
-HelloWorldModule::HelloWorldModule(const std::string &name, const std::string &description, const std::string &version)
+MyModule::HelloWorldModule::HelloWorldModule(const std::string &name, const std::string &description, const std::string &version)
 	:	ZiApi::IModule(name, description, version)
 {
 	std::string _name("toto");
@@ -14,7 +15,7 @@ HelloWorldModule::HelloWorldModule(const std::string &name, const std::string &d
 	this->addEvent(event);
 }
 
-void	HelloWorldModule::HelloWorld(std::shared_ptr<ZiApi::HttpMessage>& request, std::shared_ptr<ZiApi::HttpMessage>& response)
+void	MyModule::HelloWorldModule::HelloWorld(std::shared_ptr<ZiApi::HttpMessage>& request, std::shared_ptr<ZiApi::HttpMessage>& response)
 {
 	std::string test("THIS IS THE NEW REQUEST !");
 
