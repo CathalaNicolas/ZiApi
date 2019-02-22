@@ -49,7 +49,7 @@ namespace ZiApi
 		/**
 		* \brief      Getter du header
 		* \details    Fonction donnant acces a l'objet HttpField contenant
-		*			  le header
+		*			  le headere
 		*
 		* \return    Un \e HttpField correspondant au header.
 		 */
@@ -70,6 +70,12 @@ namespace ZiApi
 		*\param message	Une string representant le message a parser
 		 */
 		void						setMessage(const std::string &message);
+		/**
+		* \brief      Getter du Message
+		* \details    Fonction retournant le Message
+		*			  sous forme de string (header + body)
+		*/
+		std::string					getMessage()const;
 
 	private:
 		std::shared_ptr<HttpField>	header;

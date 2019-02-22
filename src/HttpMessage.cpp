@@ -38,11 +38,16 @@ void								ZiApi::HttpMessage::setBody(const std::string &body)
 
 void								ZiApi::HttpMessage::setMessage(const std::string &message)
 {
-	std::string					delimiters("\r\n\r\n");
-	auto						end = message.find(delimiters);
+	std::string						delimiters("\r\n\r\n");
+	auto							end = message.find(delimiters);
 
-	if (end != std::string::npos)
-		this->setHeader(message.substr(0, end));
-	if (end + delimiters.length() < message.length())
+	this->setHeader(message.substr(0, end));
+	if (end + delimiters.length() < message.length()) {
 		this->setBody(message.substr(end + delimiters.length()));
+	}
+}
+
+std::string							ZiApi::HttpMessage::getMessage()const
+{
+	return (header->getStringField() + body->getStringField());
 }

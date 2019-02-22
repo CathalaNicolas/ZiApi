@@ -10,24 +10,24 @@ std::string ZiApi::IModule::getName() const
 	return (name);
 }
 
-std::string ZiApi::IModule::getDescription() const
+std::string						ZiApi::IModule::getDescription() const
 {
 	return (description);
 }
 
-std::string		ZiApi::IModule::getVersion() const
+std::string						ZiApi::IModule::getVersion() const
 {
 	return (version);
 }
 
-void			ZiApi::IModule::addEvent(const Event &event)
+void							ZiApi::IModule::addEvent(const Event &event)
 {
 	listEvent.push_back(event);
 }
 
 std::list<ZiApi::Event>			ZiApi::IModule::createListForAnchorPoint(const ZiApi::Event::AnchorPoint &anchorPoint) const
 {
-	std::list<Event>	list;
+	std::list<Event>			list;
 	
 	for (auto &&it = listEvent.begin(); it != listEvent.end(); it++)
 	{

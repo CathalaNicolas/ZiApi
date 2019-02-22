@@ -72,8 +72,8 @@ namespace ZiApi
 		std::string							field;
 		std::map<std::string, std::string>	mapField;
 
-
-		void							mapStringField(const std::string &field);
+		void								mapMethodValue(const std::string &value);
+		void								mapStringField(const std::string &field);
 	};
 
 }

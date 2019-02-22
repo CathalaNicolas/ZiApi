@@ -1,5 +1,4 @@
-#ifndef HELLO_MODULE
-# define HELLO_MODULE
+#pragma once
 
 #include "IModule.h"
 #include "Event.h"
@@ -16,11 +15,10 @@ namespace MyModule
 		HelloWorldModule(const std::string &name, const std::string &description, const std::string &version);
 		~HelloWorldModule() {};
 
-		static void	HelloWorld(std::shared_ptr<ZiApi::HttpMessage>&, std::shared_ptr<ZiApi::HttpMessage>&);
+	 void	HelloWorld(std::shared_ptr<ZiApi::HttpMessage>&, std::shared_ptr<ZiApi::HttpMessage>&);
 	private:
 	};
 
 	extern "C" BOOST_SYMBOL_EXPORT MyModule::HelloWorldModule module;
 	MyModule::HelloWorldModule module("HelloWorldModule", "Say Hello", "0.01");
 }
-#endif

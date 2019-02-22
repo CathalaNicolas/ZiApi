@@ -31,7 +31,7 @@ namespace ZiApi
 		* \param	version			Version du module
 		* \return    Un \e IModule.
 		*/
-		IModule(const std::string &name, const std::string &description, const std::string &version);
+		IModule(const std::string &name="", const std::string &description="", const std::string &version="");
 		
 		/**
 		* \brief      Getter du nom du module

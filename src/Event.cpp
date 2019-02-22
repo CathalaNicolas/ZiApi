@@ -20,14 +20,14 @@ ZiApi::Event::AnchorPoint		ZiApi::Event::getAnchorPoint()const
 	return (anchorPoint);
 }
 
-ZiApi::EventFunction		ZiApi::Event::getFunction() const
+ZiApi::EventFunction			ZiApi::Event::getFunction() const
 {
 	return (function);
 }
 
-bool		ZiApi::compareEvent(const Event &event1, const Event &event2)
+bool							ZiApi::compareEvent(const Event &event1, const Event &event2)
 {
-	if (event1.getPriority() < event2.getPriority())
+	if (event1.getPriority() > event2.getPriority())
 		return (true);
 	return (false);
 }
