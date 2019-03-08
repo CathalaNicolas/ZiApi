@@ -1,7 +1,7 @@
 #include "Handler.h"
 
 ZiApi::Handler::Handler()
-	: request(std::make_shared<HttpMessage>("", "")), response(std::make_shared<HttpMessage>("", ""))
+	: request(std::make_shared<HttpMessage>()), response(std::make_shared<HttpMessage>())
 {
 }
 
@@ -19,12 +19,12 @@ void											ZiApi::Handler::setResponse(const std::string &response)
 	this->response->setMessage(response);
 }
 
-std::shared_ptr<ZiApi::HttpMessage>				ZiApi::Handler::getRequest() const
+std::shared_ptr<ZiApi::HttpMessage>				&ZiApi::Handler::getRequest()
 {
 	return (request);
 }
 
-std::shared_ptr<ZiApi::HttpMessage>				ZiApi::Handler::getResponse() const
+std::shared_ptr<ZiApi::HttpMessage>				&ZiApi::Handler::getResponse()
 {
 	return (response);
 }
@@ -80,4 +80,11 @@ void											ZiApi::Handler::launchTypeModule(const Event::AnchorPoint &anchor
 	{
 		(*it)(this->request, this->response);
 	}
+}
+
+void											ZiApi::Handler::resetRequestResponse()
+{
+	this->request.reset(new HttpMessage());
+
+	this->response.reset(new HttpMessage());
 }

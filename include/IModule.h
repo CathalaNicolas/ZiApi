@@ -32,7 +32,7 @@ namespace ZiApi
 		* \return    Un \e IModule.
 		*/
 		IModule(const std::string &name="", const std::string &description="", const std::string &version="");
-		
+		virtual ~IModule();
 		/**
 		* \brief      Getter du nom du module
 		* \details    Fonction donnant acces au nom du module

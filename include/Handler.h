@@ -44,7 +44,7 @@ namespace ZiApi
 		*
 		* \return    Une \e HttpMessage contenant la requete HTTP.
 		 */
-		std::shared_ptr<HttpMessage>			getRequest()const;
+		std::shared_ptr<HttpMessage>			&getRequest();
 		/**
 		* \brief      Getter de la reponse HTTP.
 		* \details    Fonction permettant d'acceder a la reponse HTTP.
@@ -52,7 +52,7 @@ namespace ZiApi
 		*
 		* \return    Une \e HttpMessage contenant la reponse HTTP.
 		 */
-		std::shared_ptr<HttpMessage>			getResponse()const;
+		std::shared_ptr<HttpMessage>			&getResponse();
 		/**
 		* \brief      Setter de la requete HTTP.
 		* \details    Fonction permettant de modifier la requete HTTP.
@@ -92,7 +92,7 @@ namespace ZiApi
 		* \param AnchorPoint	Un point d'ancrage.
 		 */
 		void									launchTypeModule(const Event::AnchorPoint &anchorPoint);
-
+		void									resetRequestResponse();
 	private:
 		std::list<std::shared_ptr<IModule>>			listModule;
 		std::shared_ptr<HttpMessage>				request;

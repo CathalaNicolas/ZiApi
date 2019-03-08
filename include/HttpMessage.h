@@ -12,7 +12,7 @@
 #include "HttpField.h"
 #include <string>
 
-namespace ZiApi 
+namespace ZiApi
 {
 	class HttpMessage : public std::enable_shared_from_this<HttpMessage>
 	{
@@ -22,7 +22,7 @@ namespace ZiApi
 		* \details    Creer un HttpMessage avec un header et un body vide
 		* \return    Un \e HttpMessage.
 		 */
-		HttpMessage() {};
+		HttpMessage();
 		/**
 		* \brief      Constructeur de la classe HttpMessage
 		* \details    Creer un HttpMessage avec un header et un body,
@@ -70,6 +70,9 @@ namespace ZiApi
 		*\param message	Une string representant le message a parser
 		 */
 		void						setMessage(const std::string &message);
+
+		void						setHeader(const std::string &header);
+		void						setBody(const std::string &body);
 		/**
 		* \brief      Getter du Message
 		* \details    Fonction retournant le Message
@@ -80,10 +83,6 @@ namespace ZiApi
 	private:
 		std::shared_ptr<HttpField>	header;
 		std::shared_ptr<HttpField>	body;
-
-
-		void						setHeader(const std::string &header);
-		void						setBody(const std::string &body);
 	};
 
 }

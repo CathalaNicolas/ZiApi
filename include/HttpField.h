@@ -14,6 +14,7 @@
 #include <map>
 #include <vector>
 #include <iostream>
+#include <regex>
 
 namespace ZiApi
 {
@@ -28,9 +29,8 @@ namespace ZiApi
 		*/
 		HttpField() {};
 		/**
-		* \brief      Constructeur de la classe Event.
-		* \details    Créer un Event défini par un nom, une fonction a appeler, un point d'ancrage
-		*			  ainsi qu'une priorité.
+		* \brief      Constructeur de la classe HttpField.
+		* \details    Créer un HttpField
 		*
 		* \param    field   Une string correspondant a la partie de la requête/réponse
 							que l'on souhaite créér.
@@ -68,6 +68,7 @@ namespace ZiApi
 		* \return    Une \e string correspondant a la partie de la requête/réponse non parsée.
 		*/
 		std::string							getStringField()const { return field; }
+
 	private:
 		std::string							field;
 		std::map<std::string, std::string>	mapField;

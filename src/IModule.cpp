@@ -5,6 +5,11 @@ ZiApi::IModule::IModule(const std::string &name, const std::string &description,
 {
 }
 
+ZiApi::IModule::~IModule()
+{
+
+}
+
 std::string ZiApi::IModule::getName() const
 {
 	return (name);

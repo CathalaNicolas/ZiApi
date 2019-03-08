@@ -89,6 +89,7 @@ namespace ZiApi {
 		EventFunction	getFunction()const;
 		
 	private:
+		const bool			async_supported = false;
 		const std::string	name;
 		EventFunction		function;
 		EventPriority		priority;
