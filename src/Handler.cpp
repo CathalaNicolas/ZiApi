@@ -1,7 +1,7 @@
 #include "Handler.h"
 
 ZiApi::Handler::Handler()
-	: request(std::make_shared<HttpMessage>()), response(std::make_shared<HttpMessage>())
+	: request(std::make_shared<HttpMessage>("", "")), response(std::make_shared<HttpMessage>("", ""))
 {
 }
 
@@ -19,12 +19,12 @@ void											ZiApi::Handler::setResponse(const std::string &response)
 	this->response->setMessage(response);
 }
 
-std::shared_ptr<ZiApi::HttpMessage>				&ZiApi::Handler::getRequest()
+std::shared_ptr<ZiApi::HttpMessage>				ZiApi::Handler::getRequest() const
 {
 	return (request);
 }
 
-std::shared_ptr<ZiApi::HttpMessage>				&ZiApi::Handler::getResponse()
+std::shared_ptr<ZiApi::HttpMessage>				ZiApi::Handler::getResponse() const
 {
 	return (response);
 }
@@ -82,9 +82,12 @@ void											ZiApi::Handler::launchTypeModule(const Event::AnchorPoint &anchor
 	}
 }
 
-void											ZiApi::Handler::resetRequestResponse()
+void											ZiApi::Handler::launchTypeModule(const Event::AnchorPoint &anchorPoint, std::shared_ptr<ZiApi::HttpMessage> &request, std::shared_ptr<ZiApi::HttpMessage> &response)
 {
-	this->request.reset(new HttpMessage());
+	std::list<ZiApi::EventFunction>				allModuleFunction = getListFunction(listModule, anchorPoint);
 
-	this->response.reset(new HttpMessage());
+	for (auto &&it = allModuleFunction.begin(); it != allModuleFunction.end(); it++)
+	{
+		(*it)(request, response);
+	}
 }
